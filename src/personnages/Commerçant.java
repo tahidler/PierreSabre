@@ -1,20 +1,24 @@
 package personnages;
 
-public class Commerçant extends Humain {
+public class CommerÃ§ant extends Humain {
     
-    public Commerçant(String nom, int argent) {
-        super(nom, "thé", argent);
+    public CommerÃ§ant(String nom, int argent) {
+        super(nom, "thï¿½", argent);
     }
 
     public int seFaireExtorquer() {
-        int montantExtorque = getArgent();
-        perdreArgent(montantExtorque); // Utilise la méthode de la classe parent
-        parler("J’ai tout perdu! Le monde est trop injuste...");
+        int montantExtorque = 15;
+        if(getArgent() < montantExtorque) {
+            montantExtorque = getArgent();
+        }
+        perdreArgent(montantExtorque);
+        parler("Jâ€™ai tout perdu! Le monde est trop injuste...");
         return montantExtorque;
     }
 
+
     public void recevoir(int argent) {
-        gagnerArgent(argent); // Utilise la méthode de la classe parent
-        parler(argent + " sous! Je te remercie généreux donateur!");
+        gagnerArgent(argent); // Utilise la mï¿½thode de la classe parent
+        parler(argent + " sous! Je te remercie gï¿½nï¿½reux donateur!");
     }
 }

@@ -1,9 +1,8 @@
 package histoire;
 
 import personnages.Humain;
-import personnages.CommerÁant;
-
-
+import personnages.Commer√ßant;
+import personnages.Yakuza;
 
 //public class HistoireTP4 {
 	
@@ -20,14 +19,24 @@ import personnages.CommerÁant;
 //    }
 //}
 
-public class HistoireTP4{
+//public class HistoireTP4{
+//
+//	public static void main(String[] args) {
+//		Commer√ßant marco = new Commer√ßant("Marco", 20);
+//    
+//		marco.direBonjour();
+//		marco.seFaireExtorquer();
+//		marco.recevoir(15);
+//		marco.boire();
+//	}
+//}
 
-	public static void main(String[] args) {
-		CommerÁant marco = new CommerÁant("Marco", 20);
-    
-		marco.direBonjour();
-		marco.seFaireExtorquer();
-		marco.recevoir(15);
-		marco.boire();
-	}
+public class HistoireTP4 {
+    public static void main(String[] args) {
+        Commer√ßant marco = new Commer√ßant("Marco", 20);
+        Yakuza yakuLeNoir = new Yakuza("Yaku Le Noir", 30, "Warsong");
+        
+        yakuLeNoir.direBonjour();
+        yakuLeNoir.extorquer(marco);
+    }
 }
