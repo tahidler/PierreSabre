@@ -19,13 +19,24 @@ public class Humain {
         return nom;
     }
     
-    public int getArgent() {
+//    public int getArgent() {
+//        return argent;
+//        
+//    }
+//    
+    protected int getArgent() {
         return argent;
     }
+
     
     
-    private void parler(String texte) {
-        System.out.println("(" + nom + ") - " + texte);
+//    private void parler(String texte) {
+//        System.out.println("(" + nom + ") - " + texte);
+//    }
+//    
+    
+    protected void parler(String texte) {
+        System.out.println("(" + getNom() + ") - " + texte);
     }
 
     public void direBonjour() {
@@ -47,11 +58,22 @@ public class Humain {
 
 
     
-    public void gagnerArgent(int gain) {
+//    public void gagnerArgent(int gain) {
+//        argent += gain;
+//    }
+//    
+    protected void gagnerArgent(int gain) {
         argent += gain;
     }
 
-    public void perdreArgent(int perte) {
+//    public void perdreArgent(int perte) {
+//        argent -= perte;
+//    }
+//    
+    
+    protected void perdreArgent(int perte) {
         argent -= perte;
     }
 }
+
+
