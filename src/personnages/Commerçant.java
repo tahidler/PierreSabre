@@ -17,8 +17,15 @@ public class Commerçant extends Humain {
     }
 
 
+//    public void recevoir(int argent) {
+//        gagnerArgent(argent); // Utilise la m�thode de la classe parent
+//        parler(argent + " sous! Je te remercie g�n�reux donateur!");
+//    }
+    
+    
     public void recevoir(int argent) {
-        gagnerArgent(argent); // Utilise la m�thode de la classe parent
-        parler(argent + " sous! Je te remercie g�n�reux donateur!");
+        gagnerArgent(argent);
+        parler(argent + " sous ! Je te remercie généreux donateur!");
     }
+
 }
