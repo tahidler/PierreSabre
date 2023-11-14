@@ -39,7 +39,7 @@ public class Ronin extends Humain {
 
     
     
-    public void donner(Commerçant commercant) {
+    public void donner(Commercant commercant) {
         int montantADonner = 10; // Par exemple, vous pouvez définir une logique pour le montant à donner
         this.perdreArgent(montantADonner); // Le Ronin perd de l'argent
         commercant.recevoirArgent(montantADonner); // Le Commerçant reçoit de l'argent

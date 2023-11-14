@@ -27,11 +27,11 @@ package personnages;
 //
 //}
 
-public class Commerçant {
+public class Commercant {
     private String nom;
     private int argent;
 
-    public Commerçant(String nom, int argent) {
+    public Commercant(String nom, int argent) {
         this.nom = nom;
         this.argent = argent;
     }
