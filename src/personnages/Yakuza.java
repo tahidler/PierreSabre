@@ -37,7 +37,7 @@ public class Yakuza extends Humain {
         System.out.println("(" + nom + ") - Je suis un Yakuza!");
     }
 
-    public void extorquer(Commerçant commercant) {
+    public void extorquer(Commercant commercant) {
         this.ajouterArgent(commercant.donnerArgent());
         System.out.println("(" + nom + ") - J'ai extorqué de l'argent!");
     }

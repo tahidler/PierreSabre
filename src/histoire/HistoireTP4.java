@@ -1,7 +1,7 @@
 package histoire;
 
 import personnages.Humain;
-import personnages.Commerçant;
+import personnages.Commercant;
 import personnages.Yakuza;
 import personnages.Ronin;
 
@@ -57,7 +57,7 @@ public class HistoireTP4 {
 
     public static void main(String[] args) {
         // Création des personnages
-    	Commerçant marco = new Commerçant("Marco", 15);  // en supposant que 15 est l'argent initial.
+    	Commercant marco = new Commercant("Marco", 15);  // en supposant que 15 est l'argent initial.
 
     	Yakuza yaku = new Yakuza("Yaku Le Noir", 30);  // en supposant que 30 est l'argent initial.
 
