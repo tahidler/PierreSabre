@@ -1,12 +1,11 @@
 package histoire;
 
-import personnages.Humain;
 import personnages.Commercant;
-import personnages.Yakuza;
 import personnages.Ronin;
+import personnages.Yakuza;
 
 //public class HistoireTP4 {
-	
+
 //    public static void main(String[] args) {
 //        Humain prof = new Humain("Prof", "kombucha", 54);
 //        
@@ -52,36 +51,33 @@ import personnages.Ronin;
 //    }
 //}
 
-
 public class HistoireTP4 {
 
-    public static void main(String[] args) {
-        // Création des personnages
-    	Commercant marco = new Commercant("Marco", 15);  // en supposant que 15 est l'argent initial.
+	public static void main(String[] args) {
+		// Création des personnages
+		Commercant marco = new Commercant("Marco", 15);
 
-    	Yakuza yaku = new Yakuza("Yaku Le Noir", 30);  // en supposant que 30 est l'argent initial.
+		Yakuza yaku = new Yakuza("Yaku Le Noir", "Wiski", 30, "Warsong");
 
+		Ronin rozo = new Ronin("Rozo", "Shoshu", 60);
 
-    	Ronin rozo = new Ronin("Rozo", 60);  // en supposant que 60 est l'argent initial.
+		// Scénario pour le Yakuza extorquant le commerçant
+		yaku.sePresenter();
+		yaku.extorquer(marco);
 
+		// Scénario pour le Ronin donnant de l'argent au commerçant
+		rozo.sePresenter();
+		rozo.donner(marco);
 
-        // Scénario pour le Yakuza extorquant le commerçant
-        yaku.sePresenter();
-        yaku.extorquer(marco);
+		// Scénario de duel entre Ronin et Yakuza
+		System.out.println(
+				"(Roro) - Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand!");
+		rozo.provoquer(yaku);
 
-        // Scénario pour le Ronin donnant de l'argent au commerçant
-        rozo.sePresenter();
-        rozo.donner(marco);
+		// Modification de la réputation du Yakuza pour le prochain scénario
+		yaku.setReputation(4);
 
-        // Scénario de duel entre Ronin et Yakuza
-        System.out.println("(Roro) - Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand!");
-        rozo.provoquer(yaku);
-
-        // Modification de la réputation du Yakuza pour le prochain scénario
-        yaku.setReputation(4);
-
-        // Nouveau duel
-        rozo.provoquer(yaku);
-    }
+		// Nouveau duel
+		rozo.provoquer(yaku);
+	}
 }
-

@@ -1,4 +1,7 @@
 package personnages;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 //
 //
 //public class Humain {
@@ -94,35 +97,69 @@ package personnages;
 //
 //
 
-
 public class Humain {
-    protected String nom;
-    protected String boisson;
-    protected int argent;
 
-    public Humain(String nom, String boisson, int argent) {
-        this.nom = nom;
-        this.boisson = boisson;
-        this.argent = argent;
-    }
+	protected String nom;
+	protected String boisson;
+	protected int argent;
+	protected int nbConnaissance;
+	protected Set<Humain> memoire;
 
-    // Getter pour l'argent
-    public int getArgent() {
-        return argent;
-    }
+	public Humain(String nom, String boisson, int argent) {
+		this.nom = nom;
+		this.boisson = boisson;
+		this.argent = argent;
+		this.nbConnaissance = 0;
+		this.memoire = new LinkedHashSet<>();
+	}
 
-    // Setter pour l'argent
-    public void setArgent(int argent) {
-        this.argent = argent;
-    }
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		if (this.memoire.size() >= 30) {
 
-    // Méthode pour ajouter de l'argent
-    public void ajouterArgent(int montant) {
-        this.argent += montant;
-    }
+			this.memoire.remove(this.memoire.iterator().next());
+		}
 
-    // ... autres méthodes et attributs ...
+		if (!this.memoire.contains(autreHumain)) {
+			this.memoire.add(autreHumain);
+			autreHumain.memoire.add(this);
+			this.direBonjour();
+			autreHumain.direBonjour();
+		}
+	}
+
+	public void direBonjour() {
+		parler("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boisson + ".");
+	}
+
+	public void parler(String texte) {
+		System.out.println(texte);
+	}
+
+	public void listerConnaissance() {
+		if (memoire.isEmpty()) {
+			System.out.println(this.nom + " ne se souvient de personne.");
+		} else {
+			System.out.println(this.nom + " se souvient des personnes suivantes :");
+			for (Humain humain : memoire) {
+				System.out.println("- " + humain.nom);
+			}
+		}
+	}
+
+	// Getter pour l'argent
+	public int getArgent() {
+		return argent;
+	}
+
+	// Setter pour l'argent
+	public void setArgent(int argent) {
+		this.argent = argent;
+	}
+
+	// Méthode pour ajouter de l'argent
+	public void ajouterArgent(int montant) {
+		this.argent += montant;
+	}
+
+	// ... autres méthodes et attributs ...
 }
-
-
-
